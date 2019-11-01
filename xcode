@@ -1,0 +1,67 @@
+   
+
+    @IBOutlet weak var textField: UITextField!
+
+    @IBOutlet  var enterButton: UIButton!
+
+    @IBOutlet weak var newNum: UILabel!
+
+    
+
+    @IBAction func buttonAfter(_ sender: Any) {
+
+        let numb = Int(textField.text!)
+
+        newNum.text = fizzBuzz(num: numb!)
+
+    }
+
+    func fizzBuzz(num: Int) -> String{
+
+        var answer = " "
+
+    for number in 1...num {
+
+        if number % 3 == 0 && number % 5 == 0 && number % 7 != 0{
+
+            answer += "FizzBuzz,"
+
+        }else if number % 3 == 0 && number % 5 != 0 && number % 7 != 0{
+
+            answer += "Fizz,"
+
+        }else if number % 7 == 0 && number % 5 != 0 && number % 3 != 0{
+
+            answer += "Bang,"
+
+        }else if number % 3 == 0 && number % 5 == 0 && number % 7 == 0{
+
+            answer += "FizzBuzzBang,"
+
+        }else if number % 5 == 0 && number % 3 != 0 && number % 7 != 0{
+
+            answer += "Buzz,"
+
+        }else if number % 3 == 0 && number % 7 == 0 && number % 5 != 0{
+
+            answer += "FizzBang,"
+
+        }else if number % 5 == 0 && number % 7 == 0 && number % 3 != 0{
+
+            answer += "BuzzBang,"
+
+        }else{
+
+            answer += String(number) + ","
+
+    }
+
+}
+
+return answer
+
+
+
+}
+
+}
